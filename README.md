@@ -56,41 +56,67 @@ D7 = X Y Z
 
 ### Procedure
 /* write all the steps invloved */
-
-
+Step-1:create module encoder and decoder.
+Step-2:Get inputs and outputs for encoders and decoders.
+Step-3:perform or operation for encoders and decoders.
+Step-4:perform RTL LOGIC and get waveform.
+Step-5:End the module
 
 ### PROGRAM 
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+
+ENCODER
+
+module EX7(a,b,c,d0,d1,d2d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+
+DECODER
+
+module EX7 (d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule
+
+
+Developed by:K.DEEPIKA
+RegisterNumber:212222050009  
 */
 
+### RTL LOGIC 
 
+ENCODE
+![RE](https://github.com/Deepika9505/Experiment-08-Encoders-and-decoders-/assets/128984662/aca6fb80-f5c1-4804-b92a-d85bb364631f)
+DECODER
+![RD](https://github.com/Deepika9505/Experiment-08-Encoders-and-decoders-/assets/128984662/8ab1edd1-9e35-4ca3-badb-22d69a610f8b)
 
+### TIMING DIGRAMS 
 
-
-
-### RTL LOGIC  
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS  
-
-
-
-
+ENCODER
+![TDE](https://github.com/Deepika9505/Experiment-08-Encoders-and-decoders-/assets/128984662/bc6f29a3-f066-44f8-93d2-58303534584f)
+DECODER
+![TDD](https://github.com/Deepika9505/Experiment-08-Encoders-and-decoders-/assets/128984662/22db8d63-5ac5-46d9-a404-be4508d6aceb)
 
 ### TRUTH TABLE 
 
-
-
-
-
+ENCODER
+![TTE](https://github.com/Deepika9505/Experiment-08-Encoders-and-decoders-/assets/128984662/ab4d23b4-a160-4eb3-a657-afe368bf1bdb)
+DECODER
+![TTD](https://github.com/Deepika9505/Experiment-08-Encoders-and-decoders-/assets/128984662/76129e95-ba7d-4402-ac33-ca97a3d84f2e)
 
 ### RESULTS 
+
+Thus the program to desing encoder and decoder is completed. 
